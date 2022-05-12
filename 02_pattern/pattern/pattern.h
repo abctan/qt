@@ -2,6 +2,7 @@
 #define PATTERN_H
 
 #include <QWidget>
+#include "spinslider.h"
 
 namespace Ui {
 class Pattern;

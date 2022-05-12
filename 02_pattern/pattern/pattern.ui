@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Pattern</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout">
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
     <widget class="QListWidget" name="listWidget">
      <property name="maximumSize">
@@ -35,29 +35,309 @@
     </widget>
    </item>
    <item>
-    <widget class="QStackedWidget" name="stackedWidget">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <property name="currentIndex">
-      <number>0</number>
-     </property>
-     <widget class="QWidget" name="page"/>
-     <widget class="QWidget" name="page_2"/>
-    </widget>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="link_serial">
+         <property name="text">
+          <string>串口</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="select_chip">
+         <item>
+          <property name="text">
+           <string>V800</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>530</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>550</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>分辨率</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="pixel">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>7680X4320</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>3840X2160</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1920X1080</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>自定义</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="tool_ok">
+         <property name="text">
+          <string>完成</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="page">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QScrollArea" name="scrollArea">
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>755</width>
+              <height>590</height>
+             </rect>
+            </property>
+            <widget class="QGroupBox" name="group_bg">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>30</y>
+               <width>281</width>
+               <height>181</height>
+              </rect>
+             </property>
+             <property name="title">
+              <string>背景色配置</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QRadioButton" name="bg_en">
+                <property name="text">
+                 <string>使能</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QGridLayout" name="gridLayout">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_bg_bit">
+                  <property name="text">
+                   <string>bit位</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QRadioButton" name="bg_bit10">
+                  <property name="text">
+                   <string>10bit</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2" colspan="2">
+                 <widget class="QRadioButton" name="bg_bit12">
+                  <property name="text">
+                   <string>12bit</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_bg_r">
+                  <property name="text">
+                   <string>R</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1" colspan="2">
+                 <widget class="QSlider" name="slider_bg_r">
+                  <property name="maximum">
+                   <number>1023</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="3">
+                 <widget class="QSpinBox" name="spinBox_bg_r">
+                  <property name="maximum">
+                   <number>1023</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_bg_g">
+                  <property name="text">
+                   <string>G</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1" colspan="2">
+                 <widget class="QSlider" name="slider_bg_g">
+                  <property name="maximum">
+                   <number>1023</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="3">
+                 <widget class="QSpinBox" name="spinBox_bg_g">
+                  <property name="maximum">
+                   <number>1023</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="label_bg_b">
+                  <property name="text">
+                   <string>B</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1" colspan="2">
+                 <widget class="QSlider" name="slider_bg_b">
+                  <property name="maximum">
+                   <number>1023</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="3">
+                 <widget class="QSpinBox" name="spinBox_bg_b">
+                  <property name="maximum">
+                   <number>1023</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QGroupBox" name="groupBox">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>270</y>
+               <width>371</width>
+               <height>161</height>
+              </rect>
+             </property>
+             <property name="title">
+              <string>GroupBox</string>
+             </property>
+             <widget class="SpinSlider" name="widget" native="true">
+              <property name="geometry">
+               <rect>
+                <x>100</x>
+                <y>50</y>
+                <width>201</width>
+                <height>41</height>
+               </rect>
+              </property>
+             </widget>
+            </widget>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_2">
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>290</x>
+           <y>320</y>
+           <width>54</width>
+           <height>12</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>index2</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>SpinSlider</class>
+   <extends>QWidget</extends>
+   <header location="global">spinslider.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
