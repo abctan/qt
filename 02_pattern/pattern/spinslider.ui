@@ -6,15 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>262</width>
-    <height>79</height>
+    <width>218</width>
+    <height>40</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>40</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777213</width>
+    <height>120</height>
+   </size>
   </property>
   <property name="sizeIncrement">
    <size>
@@ -28,6 +40,12 @@
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QLabel" name="label">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>35</height>
+      </size>
+     </property>
      <property name="text">
       <string>label</string>
      </property>
@@ -38,6 +56,12 @@
    </item>
    <item>
     <widget class="QSlider" name="horizontalSlider">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>35</height>
+      </size>
+     </property>
      <property name="maximum">
       <number>1023</number>
      </property>
@@ -57,7 +81,7 @@
      <property name="maximumSize">
       <size>
        <width>120</width>
-       <height>16777215</height>
+       <height>35</height>
       </size>
      </property>
      <property name="layoutDirection">

@@ -151,8 +151,8 @@
               <rect>
                <x>30</x>
                <y>30</y>
-               <width>281</width>
-               <height>181</height>
+               <width>221</width>
+               <height>171</height>
               </rect>
              </property>
              <property name="title">
@@ -167,8 +167,8 @@
                </widget>
               </item>
               <item>
-               <layout class="QGridLayout" name="gridLayout">
-                <item row="0" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
                  <widget class="QLabel" name="label_bg_bit">
                   <property name="text">
                    <string>bit位</string>
@@ -178,7 +178,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="1">
+                <item>
                  <widget class="QRadioButton" name="bg_bit10">
                   <property name="text">
                    <string>10bit</string>
@@ -188,120 +188,25 @@
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="2" colspan="2">
+                <item>
                  <widget class="QRadioButton" name="bg_bit12">
                   <property name="text">
                    <string>12bit</string>
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="label_bg_r">
-                  <property name="text">
-                   <string>R</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1" colspan="2">
-                 <widget class="QSlider" name="slider_bg_r">
-                  <property name="maximum">
-                   <number>1023</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="3">
-                 <widget class="QSpinBox" name="spinBox_bg_r">
-                  <property name="maximum">
-                   <number>1023</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLabel" name="label_bg_g">
-                  <property name="text">
-                   <string>G</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="1" colspan="2">
-                 <widget class="QSlider" name="slider_bg_g">
-                  <property name="maximum">
-                   <number>1023</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="3">
-                 <widget class="QSpinBox" name="spinBox_bg_g">
-                  <property name="maximum">
-                   <number>1023</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="label_bg_b">
-                  <property name="text">
-                   <string>B</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1" colspan="2">
-                 <widget class="QSlider" name="slider_bg_b">
-                  <property name="maximum">
-                   <number>1023</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="3">
-                 <widget class="QSpinBox" name="spinBox_bg_b">
-                  <property name="maximum">
-                   <number>1023</number>
-                  </property>
-                 </widget>
-                </item>
                </layout>
               </item>
+              <item>
+               <widget class="SpinSlider" name="bg_r" native="true"/>
+              </item>
+              <item>
+               <widget class="SpinSlider" name="bg_g" native="true"/>
+              </item>
+              <item>
+               <widget class="SpinSlider" name="bg_b" native="true"/>
+              </item>
              </layout>
-            </widget>
-            <widget class="QGroupBox" name="groupBox">
-             <property name="geometry">
-              <rect>
-               <x>40</x>
-               <y>270</y>
-               <width>371</width>
-               <height>161</height>
-              </rect>
-             </property>
-             <property name="title">
-              <string>GroupBox</string>
-             </property>
-             <widget class="SpinSlider" name="widget" native="true">
-              <property name="geometry">
-               <rect>
-                <x>100</x>
-                <y>50</y>
-                <width>201</width>
-                <height>41</height>
-               </rect>
-              </property>
-             </widget>
             </widget>
            </widget>
           </widget>

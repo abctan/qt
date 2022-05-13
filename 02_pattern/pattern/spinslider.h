@@ -22,6 +22,8 @@ public:
     int getMinimum() const;
     void setValue(int val);
     int value() const;
+    void setText(const QString &string);
+    QString text() const;
 
 private:
     Ui::SpinSlider *ui;

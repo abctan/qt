@@ -16,7 +16,7 @@ SpinSlider::~SpinSlider()
 
 void SpinSlider::soft_init()
 {
-    connect(ui->horizontalSlider, &QSlider::valueChanged, ui->spinBox, &QSpinBox::setValue);
+    connect(ui->horizontalSlider, &QSlider::sliderMoved, ui->spinBox, &QSpinBox::setValue);
     connect(ui->spinBox, static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged),
             ui->horizontalSlider, &QSlider::setValue);
 }
@@ -52,4 +52,14 @@ void SpinSlider::setValue(int val)
 int SpinSlider::value() const
 {
     return ui->spinBox->value();
+}
+
+void SpinSlider::setText(const QString &string)
+{
+    ui->label->setText(string);
+}
+
+QString SpinSlider::text() const
+{
+    return ui->label->text();
 }
