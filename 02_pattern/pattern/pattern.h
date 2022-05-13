@@ -2,6 +2,8 @@
 #define PATTERN_H
 
 #include <QWidget>
+#include <QButtonGroup>
+#include "spinslider.h"
 
 namespace Ui {
 class Pattern;
@@ -19,6 +21,8 @@ public:
 
 private:
     Ui::Pattern *ui;
+    QButtonGroup *bgBitGroup;
+
 };
 
 #endif // PATTERN_H

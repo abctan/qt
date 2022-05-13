@@ -25,10 +25,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        pattern.cpp
+        pattern.cpp \
+    spinslider.cpp
 
 HEADERS += \
-        pattern.h
+        pattern.h \
+    spinslider.h
 
 FORMS += \
-        pattern.ui
+        pattern.ui \
+    spinslider.ui
