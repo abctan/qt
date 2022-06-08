@@ -9,6 +9,9 @@ namespace Ui {
 class Pattern;
 }
 
+#define CBAR_MAX_NUM 8
+#define RGB_MAX_NUM  3
+
 class Pattern : public QWidget
 {
     Q_OBJECT
@@ -22,7 +25,10 @@ public:
 private:
     Ui::Pattern *ui;
     QButtonGroup *bgBitGroup;
-
+    QButtonGroup *barNumGroup;
+    QButtonGroup *barDirpTionGroup;
+    QButtonGroup *barGrayGroup;
+    SpinSlider   *barcolor[CBAR_MAX_NUM][RGB_MAX_NUM];
 };
 
 #endif // PATTERN_H

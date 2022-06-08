@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1005</width>
-    <height>665</height>
+    <width>1167</width>
+    <height>668</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -142,8 +142,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>755</width>
-              <height>590</height>
+              <width>917</width>
+              <height>593</height>
              </rect>
             </property>
             <widget class="QGroupBox" name="group_bg">
@@ -160,7 +160,7 @@
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_3">
               <item>
-               <widget class="QRadioButton" name="bg_en">
+               <widget class="QCheckBox" name="bg_en">
                 <property name="text">
                  <string>使能</string>
                 </property>
@@ -207,6 +207,151 @@
                <widget class="SpinSlider" name="bg_b" native="true"/>
               </item>
              </layout>
+            </widget>
+            <widget class="QGroupBox" name="group_cbar">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>30</y>
+               <width>271</width>
+               <height>161</height>
+              </rect>
+             </property>
+             <property name="title">
+              <string>colorbar配置</string>
+             </property>
+             <layout class="QVBoxLayout" name="bar_vlayout">
+              <item>
+               <widget class="QCheckBox" name="bar_en">
+                <property name="text">
+                 <string>使能</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QLabel" name="label_cbartext">
+                  <property name="text">
+                   <string>cbar数量</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="bar_two">
+                  <property name="text">
+                   <string>2个</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="bar_four">
+                  <property name="text">
+                   <string>4个</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="bar_eight">
+                  <property name="text">
+                   <string>8个</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
+                  </property>
+                  <property name="text">
+                   <string>方向</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="bar_direction_h">
+                  <property name="text">
+                   <string>水平</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="bar_direction_v">
+                  <property name="text">
+                   <string>垂直</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="bar_grad_en">
+                <property name="text">
+                 <string>使能渐变</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>渐变模式</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="bar_gray_inc">
+                  <property name="text">
+                   <string>递增</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="bar_gray_dim">
+                  <property name="text">
+                   <string>递减</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="hlay"/>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QGroupBox" name="groupBox">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>290</y>
+               <width>841</width>
+               <height>241</height>
+              </rect>
+             </property>
+             <property name="title">
+              <string>GroupBox</string>
+             </property>
             </widget>
            </widget>
           </widget>
