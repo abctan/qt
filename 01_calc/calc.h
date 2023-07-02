@@ -2,49 +2,35 @@
 #define CALC_H
 
 #include <QWidget>
-#include <QPushButton>
-#include <QPainter>
-#include <QSlider>
-#include <QLabel>
-#include "RangeSlider.h"
 
 namespace Ui {
 class Calc;
 }
 
-enum TextType {
-    BINARY = 0,
-    OCTAL,
-    DECIMAL,
-    HEX
-};
-
 class Calc : public QWidget
 {
     Q_OBJECT
 
+    enum bitMoveDirectionType {
+        BIT_MOVE_LEFT,
+        BIT_MOVE_RIGHT,
+        BIT_MOVE_CLEAN_ZERO_ALL,
+        BIT_MOVE_SET_ONE_ALL,
+        BIT_MOVE_REVERSE
+    };
 public:
-    explicit Calc(QWidget *parent = 0);
+    explicit Calc(QWidget *parent = nullptr);
     ~Calc();
-    void init_ui();
-    void init_connect();
-    void binary_conversion(enum TextType type, const QString &text);
-    void set_value(unsigned int val);
-    unsigned int get_value() const;
 
-public slots:
-    void slots_set_rangeslider();
+    void initConnect();
+    void setBindispVal(enum bitMoveDirectionType type, int moveOffest);
+    void setAsciiEdit(unsigned int val);
+    void setAsciiEdit(unsigned int val, int low, int high);
 
+private slots:
+    void setSelectShowLabel();
 private:
     Ui::Calc *ui;
-    QPainter *painter;
-    QPushButton *btn_bit[32];
-    QLabel *label_bit[32];
-    RangeSlider *rangeslider;
-    unsigned int m_value;
-    unsigned int m_bit_num;
-    unsigned int m_fix_any_bit_width;
-    unsigned int m_fix_any_bit_heigh;
 };
 
 #endif // CALC_H
