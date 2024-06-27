@@ -1,5 +1,6 @@
 ﻿#include "sliderrange.h"
 #include <QPainter>
+#include <QDebug>
 #include "qevent.h"
 
 SliderRange::SliderRange(QWidget *parent) : QWidget(parent)
@@ -28,6 +29,7 @@ SliderRange::SliderRange(QWidget *parent) : QWidget(parent)
     rangPressed = false;
 
     setFont(QFont("Arial", 7));
+    setMouseTracking(true);
 }
 
 SliderRange::SliderRange(int leftVal, int rightVal, QWidget *parent) : QWidget(parent)
@@ -56,6 +58,7 @@ SliderRange::SliderRange(int leftVal, int rightVal, QWidget *parent) : QWidget(p
     rangPressed = false;
 
     setFont(QFont("Arial", 7));
+    setMouseTracking(true);
 }
 
 SliderRange::~SliderRange()
@@ -90,6 +93,14 @@ void SliderRange::mouseReleaseEvent(QMouseEvent *)
 
 void SliderRange::mouseMoveEvent(QMouseEvent *e)
 {
+    // 设置鼠标样式
+    if (leftSliderRect.contains(e->pos()) || rightSliderRect.contains(e->pos())) {
+        this->setCursor(Qt::SplitHCursor);
+    } else if (rangSliderRect.contains(e->pos())) {
+        this->setCursor(Qt::OpenHandCursor);
+    } else {
+        this->setCursor(Qt::ArrowCursor);
+    }
     //指示器选中,并且坐标在范围值内,且不能超过另外指示器坐标
     if (leftPressed == true) {
         if (e->pos().x() >= rect().x()) {
@@ -121,16 +132,16 @@ void SliderRange::mouseMoveEvent(QMouseEvent *e)
         int step = (e->pos().x() - rangPressedPos.x()) / increment;
         if (step > 0) {         // 右移动
             if (rightValue < maxValue) {
-                ++leftValue;
-                ++rightValue;
+                leftValue  += step;
+                rightValue += step;
                 rangPressedPos = e->pos();
                 emit valueChanged(leftValue, rightValue);
                 update();
             }
         } else if (step < 0) {  // 左移动
             if (leftValue > minValue) {
-                --leftValue;
-                --rightValue;
+                leftValue  += step;
+                rightValue += step;
                 rangPressedPos = e->pos();
                 emit valueChanged(leftValue, rightValue);
                 update();
