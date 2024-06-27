@@ -99,7 +99,9 @@ void SliderRange::mouseMoveEvent(QMouseEvent *e)
     } else if (rangSliderRect.contains(e->pos())) {
         this->setCursor(Qt::OpenHandCursor);
     } else {
-        this->setCursor(Qt::ArrowCursor);
+        if (e->button() & Qt::LeftButton) {
+            this->setCursor(Qt::ArrowCursor);
+        }
     }
     //指示器选中,并且坐标在范围值内,且不能超过另外指示器坐标
     if (leftPressed == true) {
