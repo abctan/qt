@@ -94,13 +94,13 @@ void SliderRange::mouseReleaseEvent(QMouseEvent *)
 void SliderRange::mouseMoveEvent(QMouseEvent *e)
 {
     // 设置鼠标样式
-    if (leftSliderRect.contains(e->pos()) || rightSliderRect.contains(e->pos())) {
+    if ((leftSliderRect.contains(e->pos()) || rightSliderRect.contains(e->pos())) && rangPressed != true) {
         this->setCursor(Qt::SplitHCursor);
-    } else if (rangSliderRect.contains(e->pos())) {
+    } else if ((rangSliderRect.contains(e->pos())) && (leftPressed != true || rightPressed != true)) {
         this->setCursor(Qt::OpenHandCursor);
     } else {
-        if (e->button() & Qt::LeftButton) {
-            this->setCursor(Qt::ArrowCursor);
+        if (!(leftPressed == true || rightPressed == true || rangPressed == true)) {
+            this->unsetCursor();
         }
     }
     //指示器选中,并且坐标在范围值内,且不能超过另外指示器坐标
